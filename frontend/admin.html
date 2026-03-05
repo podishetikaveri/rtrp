@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Queue - Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-circle"></div>
+        <p>Loading Admin Data...</p>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>Admin Panel - Smart Queue</h1>
+            <p>Manage tokens and track appointment history.</p>
+        </header>
+
+        <section class="card tilt-card">
+            <h2>All Tokens</h2>
+
+            <!-- Filters & Search -->
+            <div class="admin-controls">
+                <input type="text" id="adminSearchInput" placeholder="Search Name or Phone..." autocomplete="off">
+                <div class="filter-pills" id="adminFilters">
+                    <button class="filter-pill active" data-filter="ALL">All</button>
+                    <button class="filter-pill" data-filter="WAITING">Waiting</button>
+                    <button class="filter-pill" data-filter="SERVING">Serving</button>
+                    <button class="filter-pill" data-filter="COMPLETED">Completed</button>
+                </div>
+            </div>
+
+            <table id="adminTable">
+                <thead>
+                    <tr>
+                        <th>Token</th>
+                        <th>Name</th>
+                        <th>Phone</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="adminBody">
+                </tbody>
+            </table>
+        </section>
+
+        <footer>
+            <p><a href="index.html">Back to User Page</a></p>
+        </footer>
+    </div>
+
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    <div class="bg-animated"></div>
+
+    <!-- Toast Notification Container -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

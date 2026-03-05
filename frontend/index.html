@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Queue - Book Appointment</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-circle"></div>
+        <p>Initializing Smart Queue...</p>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>Smart Queue & Appointment System</h1>
+            <p>Book your appointment and skip long waiting lines.</p>
+        </header>
+
+        <section class="card tilt-card">
+            <h2>Book Appointment</h2>
+            <form id="bookingForm">
+                <label>
+                    Name
+                    <input type="text" name="name" id="name" required autocomplete="off">
+                </label>
+                <label>
+                    Phone
+                    <input type="tel" name="phone" id="phone" required autocomplete="off">
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" id="isVip">
+                    Request VIP Priority (Skip the queue)
+                </label>
+                <button type="submit">Book Now</button>
+            </form>
+            <div id="bookingResult" class="result"></div>
+        </section>
+
+        <!-- Check Status Section -->
+        <section class="card tilt-card">
+            <h2>Check Token Status</h2>
+            <div class="check-status-form">
+                <input type="text" id="checkTokenInput" placeholder="Enter your token ID (e.g., 25)" autocomplete="off">
+                <button type="button" id="checkStatusBtn" class="btn-secondary">Check Status</button>
+            </div>
+            <div id="checkStatusResult" class="result"></div>
+        </section>
+
+        <section class="card tilt-card">
+            <h2>Current Queue</h2>
+            <p id="currentServing">Loading current serving token...</p>
+            <table id="queueTable">
+                <thead>
+                    <tr>
+                        <th>Token</th>
+                        <th>Name</th>
+                        <th>Phone</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="queueBody">
+                </tbody>
+            </table>
+        </section>
+
+        <footer>
+            <p>Admin? <a href="admin.html">Go to Admin Panel</a></p>
+        </footer>
+    </div>
+
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    <div class="bg-animated"></div>
+
+    <!-- Toast Notification Container -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
